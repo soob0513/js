@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn1">+1 증가</button>
+    <button id="btn2">-1 감소</button>
+
+    <script>
+        let data = Number(document.getElementById("number").innerHTML);
+        function plus(){
+            data ++
+            document.getElementById("number").innerHTML = data ;
+        }
+        function minus(){
+            if (data <= 0){
+                document.getElementById("number").innerHTML = 0;
+            }else{
+                data --
+                document.getElementById("number").innerHTML = data;
+            }
+        }
+
+        // 코드 더 짧게 만들기!
+        /* 
+        function plus(){
+            document.getElementById("number").innerHTML = ++ data ;
+        }
+        function minus(){
+            if (data <= 0){
+                document.getElementById("number").innerHTML = 0;
+            }else{
+                document.getElementById("number").innerHTML = -- data;
+            }
+        */
+
+        // 더더 짧게 -> 삼항연산자
+        /*
+        function minus(){
+            data <= 0? document.getElementById("number").innerHTML = 0: document.getElementById("number").innerHTML = -- data;
+        }
+        */
+
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+
+        // 익명함수로 더더더 짧게!
+        // 단점 : 유지보수 어려움
+        // 언제 사용? 최종 배포할 때!
+        /*
+        document.getElementById("btn1").addEventListener("click", function(){document.getElementById("number").innerHTML = ++data});
+        document.getElementById("btn2").addEventListener("click", function(){data<=0? document.getElementById("number").innerHTML = 0:document.getElementById("number").innerHTML = -- data;});
+        */
+    </script>
+</body>
+</html>

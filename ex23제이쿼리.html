@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">수집할 텍스트</h1> 
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- 제이쿼리는 라이브러리라서 필수가 아닌 선택 -->
+    <script>
+        // 1. 요소에 접근
+        // - 제이쿼리 -> $("요소선택자")
+        let js = document.getElementById("txt");
+        console.log(js);
+
+        let jq = $("#txt");
+        console.log(jq);
+
+
+        // 2. 콘텐츠(텍스트)를 수집
+        document.getElementById("txt").innerText;
+
+        let jq_text = $("#txt").text();
+        console.log(jq_text);
+
+
+        // 3. 콘텐츠를 수정
+        // - 텍스트를 수정 -> .text("변경할 데이터")
+            // 함수는 수정할 때 대입이 불가능 -> 매개변수 활용
+        // - 태그를 포함하여 수정 -> .html("<태그>내용</태그>")
+        document.getElementById("txt").innerText = "변경";
+
+        $("#txt").text("제이쿼리로 수정");
+        $("#txt").html("<span>제이쿼리로 수정</span>");
+
+
+        // 4. 스타일 변경
+        document.getElementById("txt").style.color = "red";
+        // document.getElementById("txt").style.fontSize = "50px";
+
+        $("#txt").css("color","blue");
+        $("#txt").css("font-size","50px");  // 카멜케이스 아니고 css 치듯이
+        // 복수 스타일 제어
+        $("#txt").css({
+            color : "pink", 
+            fontSize : "100px"    // 속성 형태라서 카멜케이스로!
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MzBfMTcx%2FMDAxNjg4MDc3MzgwODg1.IgCe0m_BwHlBMG7yo6vSUxMFKYuKIrKxVKZbRfv6D5cg.00OnR3jfMupYbvvdTCQuNseT3jcwjOmCIEGeepFQ6GIg.JPEG.friend-j%2F3.jpg&type=a340" alt="">
+    <br>
+    <button id="btn">이미지 변경</button>
+
+    <script>
+        function change(){
+            // src는 프로퍼티property?
+            // property 가져오기
+            document.getElementById("image").src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMjdfMjM2%2FMDAxNjc5ODg3Mzg3NzY1._YOlropK-wdlGk2umWph_7e6lfyGGRFGwsIszU1vf7Ag.Y_iirZfHNyrew5JCPVk_f5RWg48AiTKLiX7SNDMxvWAg.PNG.choijikkyu%2F1.png&type=a340";
+            // attribute로 가져오기
+            document.getElementById("image").getAttribute("src");
+        }
+        document.getElementById("btn").addEventListener("click", change);
+    </script>
+</body>
+</html>

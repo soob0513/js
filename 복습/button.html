@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<link rel="stylesheet" href="./button.css">
+<body>
+    <div id="div1"></div>     <!-- div : 공간 할당 태그-->
+    <button id="btn">button</button>
+
+    <script>
+        // 버튼 한 번 누르면 radius 적용되도록!
+        function circle(){
+            $("#div1").css("border-radius", "50%");
+        }
+        $("#btn").on("click", circle);
+
+    </script>
+</body>
+</html>

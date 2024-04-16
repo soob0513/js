@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="default">
+    <h1>다크모드 텍스트</h1>
+    <button id="btn">다크모드 변경</button>
+    <script>
+        // 기본 바디태그의 배경색을 조회
+        // console.log($("#btn").css("background-color"));  --> 콘솔로그가 맨 처음에 나와서 결과 잘못나옴. 맨 마지막으로 이동할것!
+
+        // 1. 버튼을 클릭했을 때 배경색을 검은색, 글자색 하얀색
+        
+        /* 문제 -> 다크모드 한번 하면 다시 실행 안됨
+        $("#btn").on("click", function(){
+            // 조건 -> 배경이 흰색이면 검은색으로 or 배경이 검은색이면 흰색으로 변경
+            if ($("body").css("background-color") == "rgb(240, 240, 240)" ||
+            $("body").css("background-color") == "rgba(0, 0, 0, 0)"){
+                console.log("if문", $("#btn").css("background-color"));
+                $("body").css("background-color", "black");
+                $("h1").css("color", "white");
+            }else{
+                console.log("else문", $("#btn").css("background-color"));
+                $("body").css("background-color", "white");
+                $("h1").css("color", "black");
+            }
+        })
+        */
+        
+        // 클래스값을 변경해서 디자인을 제어
+        // 버튼을 클릭할 때마다 클래스를 변경
+        // 만약에 바디태그가 클래스값이 default라면 -> darkmode라고 변경
+        // 그게 아니라 바디태그의 클래스값이 darkmode라면 -> default로 변경
+
+        // 디자인 변경 방법 2가지
+        // 1. 직접 스타일을 제어하는 방법 -> $("요소").css("스타일","값");
+        // 하나의 태그에 스타일을 제어할 땐 좋으나, 여러 스타일, 여러 태그를 작성하면
+        // 코드의 양이 늘어난다 / 보안에 취약
+        // 언제 사용? 간단한(1~2개 정도) 스타일 제어할 때 활용 -> 메뉴바를 숨기고 보이고
+
+        // 2. 클래스를 변경해서 제어하는 방법 -> hasClass, removeClass, addClass를 통해서 제어
+        // 클래스값을 변경해서 CSS파일 내 작성된 디자인 코드를 가져온다.
+        // 많은 양의 디자인 수정에 매우 용이하다.
+        // 언제 사용? 많은 양의 디자인 코드를 수정하는 경우에 사용
+        // 주의점! 클래스를 추가할 때 반드시 기존 클래스를 제거!
+        $("#btn").on("click", function(){
+            if ($("body").hasClass("default")){
+                $("body").removeClass("default");
+                $("body").addClass("darkmode"); 
+            }else{
+                $("body").removeClass("darkmode");
+                $("body").addClass("default");
+            }
+        })
+    </script>
+</body>
+</html>

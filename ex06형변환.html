@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환 -> 자료형을 내가 원하는대로 변경
+        // 왜 필요? -> 사용자가 입력한 값(prompt, input 태그) -> string 형태
+                //  -> 숫자로 작업해야하는 경우에 숫자데이터로 변환
+        
+        let num1 = "5";
+        let num2 = "5.5";
+        console.log(num1);
+
+        // 1. 문자데이터를 정수로 변환 -> parseInt()
+        let num3 = parseInt(num2);
+        console.log(num3);
+
+        // 2. 문자데이터를 실수로 변환 -> parseFloat()
+
+        // 3. 문자데이터를 정수, 실수 그대로 변환 -> Number() ★
+        let num4 = Number(num1);
+        console.log(num4);
+
+        // 4. 숫자데이터를 문자로 변환 -> String()
+        let num5 = 5;
+        let num6 = String(num5);
+    </script>
+</body>
+</html>

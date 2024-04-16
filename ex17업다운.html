@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn1">+1 증가</button>
+    <button id="btn2">-1 감소</button>
+
+    <script>
+        // 프로세스
+        // 1. 각각 버튼에 연결시켜줄 함수 2개 제작
+        // 2. 버튼에 각각 함수를 연결
+        // 3. +버튼을 클릭할 때마다, p태그의 내용을 가지고와서 1씩 증가 시키기
+        // 4. -버튼을 클릭할 때마다, p태그의 내용을 가지고와서 1씩 감소 시키기
+        // 단! 0인 경우에는 더이상 감소하지 않게
+        // p태그 내용 형변환 필요
+
+        /*
+        function plus(){
+            plusOne = Number(document.getElementById("number").innerText) + 1;
+            document.getElementById("number").innerText = plusOne;
+        }
+        function minus(){
+            if (document.getElementById("number").innerText >= 0){
+                return 0;
+            }else{
+                minusOne = Number(document.getElementById("number").innerText) - 1;
+                document.getElementById("number").innerText = minusOne;
+            }
+        }
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+        */
+
+        // 실행 안됨!!
+        /*
+        let num = Number(document.getElementById("number").innerText);
+        function plus(){
+            plusOne = num + 1;
+            num = plusOne;
+        }
+        function minus(){
+            if (num >= 0){
+                return 0;
+            }else{
+                minusOne = num - 1;
+                num = minusOne;
+            }
+        }
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+        */
+
+        
+        function plus(){
+            let num = Number(document.getElementById("number").innerText);
+            plusOne = num + 1;
+            document.getElementById("number").innerText = plusOne;
+        }
+        function minus(){
+            let num = Number(document.getElementById("number").innerText);
+            if (num >= 0){
+                return 0;
+            }else{
+                minusOne = num - 1;
+                document.getElementById("number").innerText = minusOne;
+            }
+        }
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+    </script>
+</body>
+</html>

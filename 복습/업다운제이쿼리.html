@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn1">+1 증가</button>
+    <button id="btn2">-1 감소</button>
+
+    <script>
+        let data = Number($("#number").html());
+        function plus(){
+            $("#number").html(++ data); 
+        }
+        function minus(){
+            if (data <= 0){
+                $("#number").html("0");
+            }else {
+                $("#number").html(-- data);
+            }
+        }
+
+        $("#btn1").on("click", plus);
+        $("#btn2").on("click", minus);
+
+
+        // 삼항연산자
+        /*
+            function plus(){
+                $("#number").text(++ data);
+            }
+            function minus(){
+                data <= 0? $("#number").text("0"): $("#number").text(-- data);
+            }
+        */
+    </script>
+</body>
+</html>

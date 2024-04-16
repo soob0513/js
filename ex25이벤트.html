@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1 id="txt">변경할 데이터</h1>
+
+    <script>
+        // h1 태그에 마우스를 올렸을 때 글자색을 변경
+        document.getElementById("txt").addEventListener("mouseover", function(){
+            document.getElementById("txt").style.color = "red"
+        });
+
+        $("#txt").on("mouseover", function(){
+            $("#txt").css("color", "blue")
+        });
+        // 마우스를 뗐을 때 글자색이 검은색으로 변경되도록 -> mouseout
+        $("#txt").on("mouseout", function(){
+            $("#txt").css("color","black")
+        });
+        
+    </script>
+</body>
+</html>

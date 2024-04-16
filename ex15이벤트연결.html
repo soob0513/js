@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">수집할 텍스트</h1>
+    <button id="btn1" onclick="getData()">데이터 수집</button>
+    <button id="btn2">데이터 수정</button>
+    <button id="btn3">특별한 버튼</button>
+
+
+    <script>
+        // 1. btn1 버튼을 클릭했을 때 h1태그의 데이터를 수집해서 alert으로 출력
+        // 태그 안에 인라인 방식으로 함수와 태그를 연결 -> 코드가 노출 -> 보완 문제
+        // -> onclick : 누구나 알고 있는 내장함수나 밖으로 보여져도 괜찮은 것들만.
+        function getData() {
+            alert(document.getElementById("txt").innerText);
+        }
+
+        // 2. ★btn2 버튼을 클릭했을 때 h1 태그의 글자를 변경하는 함수
+        // 자바 스크립트 안에서 직접 이벤트를 연결
+        function setData(){
+            document.getElementById("txt").innerText = "글자 수정";
+        }
+
+        // id가 btn2인 버튼에게 이벤트를 연결
+        // ★이벤트 리스너를 통해서 함수를 연결할 때 함수명만! 적기 -> () 지우기.
+
+        // document.getElementById("btn2").addEventListener("click",setData()); 
+        // -> setData()라고 소괄호를 붙이면 클릭안해도 실행해버림.
+        document.getElementById("btn2").addEventListener("click",setData);
+        // 소괄호 삭제 -> 함수를 불러만 와
+
+        // 3. 이벤트 프로퍼티(property, 속성) 방식 
+        // 단점 : 이벤트를 하나만 감지할 수 있다.
+        document.getElementById("btn2").onclick=setData;
+
+        // 4. 하나의 요소에 하나의 함수만 필요한 경우
+        // 익명함수
+        document.getElementById("btn3").addEventListener("click",function (){
+            alert("나만 실행시키는 특별한 기능~")
+        });
+    </script>
+</body>
+</html>

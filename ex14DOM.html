@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt"><span>p태그의 콘텐츠</span></p>
+    <button id="btn" onclick="printPtag()">데이터 출력</button>
+
+    <script>
+        // Beautiful Soup -> soup.select("#txt")
+        // Selenium -> driver.findElement(By.ID, "txt")
+
+        // DOM (Document Object Model) : HTML"문서"의 요소를 효과적으로 다루기 위하여 "모든 요소"를 분리하고 "상하관계를 설정"한 후 "배치한 구조"
+        // 내가 보는 문서에서 아이디가 txt인 요소를 가져와줘!
+        // 1. 요소를 수집할 때 document.getElement(s)By구분자("값")
+        console.log(document.getElementById("txt"));
+        // document.getElementsByClassName();
+
+        // 2. 요소 안의 글자 정보만 수집
+        // innerHTML vs innerText
+        // innerHTML -> 태그 정보를 인식!
+        // innerText -> 태그 정보를 인식하지 못한다!
+        console.log(document.getElementById("txt").innerHTML);
+        console.log(document.getElementById("txt").innerText);
+
+        // 3. 요소 안의 글자 정보를 수정
+        document.getElementById("txt").innerHTML = "<h1>변경할 데이터</h1>";
+        // document.getElementById("txt").innerText = "변경할 데이터";
+
+        // 4. 요소를 수집해서 alert창으로 출력해주는 함수
+        const printPtag = () =>{
+            alert(document.getElementById("txt").innerText)
+        }
+        
+    </script>
+</body>
+</html>

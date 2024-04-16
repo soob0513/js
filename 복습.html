@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getData(){
+            alert(document.getElementsById("txt").innerText);
+        }
+        function plus(){
+            let num = Number(document.getElementById("number").innerText);
+            plusOne = num + 1;
+            document.getElementById("number").innerText = plusOne;
+        }
+        function minus(){
+            let num = Number(document.getElementById("number").innerText);
+            if (num>=0){
+                return 0;
+            }else{
+                minusOne = num -1 ;
+                document.getElementById("number").innerText = minusOne;
+            }
+        }
+        document.getElementById("btn1").addEventListener("click", plus);
+        document.getElementById("btn2").addEventListener("click", minus);
+
+
+        
+    </script>
+</body>
+</html>

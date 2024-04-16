@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭 한 번 해볼까요?</h1>
+    <div id="area"></div>
+    <button id="btn1">h1태그 생성</button>
+    <button id="btn2">a태그 생성</button>
+    <button id="btn3">ul태그 생성</button>
+
+    <script>
+        // 프로세스
+        // 1. 각각 버튼에 사용할 함수를 제작. 총 3개
+        // 2. 만든 함수와 각각 버튼을 연결 -> addEventListener
+        // 3. 각각 함수에 기능 정의 -> 버튼을 클릭했을 때 해당하는 태그로 내용을 생성
+        // 주의점! 비어있는 div에 생성한 글자가 누적돼서 출력되도록
+
+        function makeh1Tag(){
+            return  document.getElementById("area").innerHTML += "<h1>DOM 활용하기</h1>"
+        }
+        function makeaTag(){
+            return document.getElementById("area").innerHTML += "<a href='http://www.google.co.kr'>Google로 이동</a>"
+        }
+        function makeulTag(){
+            return document.getElementById("area").innerHTML += "<ul><li>HTML</li><li>CSS</li><li>JS</li></ul>"
+        }
+        document.getElementById("btn1").addEventListener("click", makeh1Tag);
+        document.getElementById("btn2").addEventListener("click", makeaTag);
+        document.getElementById("btn3").addEventListener("click", makeulTag);
+    </script>
+</body>
+</html>

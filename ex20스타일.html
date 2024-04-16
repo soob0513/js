@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">스타일 변경 텍스트</h1>
+    <button id="btn">스타일 변경!</button>
+
+    <script>
+        // style 객체에 접근해서 변경 가능
+        // 단점 : 코드가 노출, 유지보수가 매우 불편
+        // 활용 : 단순한 스타일 변경 정도에는 괜찮다.
+
+        // 프로세스
+        // 1. 함수를 제작 -> 버튼에 연결
+        // 2. 로직 작성 -> h1태그의 스타일 변경
+
+        function change() {
+            // <h1 id="txt" style="color: red;"> → style의 속성은 객체 형태임! → red(value값)에 접근하려면 → .key값
+            document.getElementById("txt").style.color = "red";
+            document.getElementById("txt").style.fontSize = "100px";  // -(하이픈)은 카멜형식으로!
+            document.getElementById("txt").style.fontWeight = "border";
+            
+            // 스타일을 한번에 문자형태로 작성 -> cssText 키 활용
+            // <h1 id="txt" style="color: red; font-size = 100px;">
+            document.getElementById("txt").style.cssText = "color: red; font-size = 100px;"
+        }
+        document.getElementById("btn").addEventListener("click", change);
+
+    </script>
+</body>
+</html>

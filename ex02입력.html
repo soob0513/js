@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 입력문 2가지 -> 1. 사용자에게 직접 입력 / 2. 사용자에게 확인 입력
+
+        // 1. 사용자에게 직접 입력 -> prompt()
+        // - 반드시 기억할 것! -> 리턴타입 : String 문자 형태
+        var name = prompt("이름을 입력하세요!", "ex)홍길동");
+        console.log(name);
+
+        // 2. 사용자에게 확인 입력 -> confirm()
+        // - 반드시 기억할 것! -> 리턴타입 : boolean 형태 (∵True, False 형태)
+        var check = confirm("정말로 삭제 하시겠습니까?");
+        console.log(check);
+
+        // 입력 받는 것은 정보 수집을 하기 위함.
+        // -> 저장하려면? 변수에 넣어주어야함!!
+    </script>
+</body>
+</html>

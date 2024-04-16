@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수 -> 데이터를 저장하는 공간
+        // 키워드 변수명 = 데이터;
+
+        // 1. 키워드 var
+            // 변수명 중복 가능
+            // 오픈소스, api 등과 같은 공개된 소스에는 대부분 var 키워드가 사용 (∵누구나 알아볼 수 있도록)
+        var age = 5;
+        var name = "김지유";
+        console.log(name);
+        var name = "김보라"
+        console.log(name);
+        name = "이시연";
+
+        // 2. 변수 키워드 추가 -> let 
+            // 변수명 중복 불가능
+        let addr = "광주";
+        console.log(addr);
+        let addr = "나주";
+        console.log(addr);
+
+        // 3. 상수 키워드 추가 -> const
+            // 1) 변하면 안되는 값을 담는 경우
+            // 2) 함수를 제작할 때 사용
+        const class_name = "사물지능";
+        class_name = "빅데이터";
+    </script>
+</body>
+</html>
